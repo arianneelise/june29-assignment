@@ -16,9 +16,8 @@ function displayPlanet() {
       const planet = res["result"]["properties"]["name"];
       document.getElementById("planet-name").innerHTML = planet;
     })
-    .catch(
-      (err) =>
-        (document.getElementById("planet-name").innerHTML =
-          "Fail! Invalid input.")
-    );
+    .catch((err) => {
+      document.getElementById("planet-name").innerHTML = "Fail! Invalid input.";
+      console.error(err);
+    });
 }
